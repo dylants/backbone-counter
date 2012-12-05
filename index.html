@@ -9,18 +9,18 @@
 	<div id="counterapp">
 		<p>Here are the counters</p>
 		<div id="counter"></div>
-		<p id='increment'>increment</p>
-		<p id='decrement'>decrement</p>
 	</div>
 	<script type="text/template" id="counter-template">
-		<div id="counter">
+		<div id="stuff">
 			<p>counter value: <%- count %></p>
+			<button id='increment'>increment</button>
+			<button id='decrement'>decrement</button>
 		</div>
 	</script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="js/lib/backbone-min.js"></script>
-	<script src="js/lib/underscore-min.js"></script>
-	<script src="js/lib/backbone-localstorage.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js"></script>
 	<script src="js/models/counter.js"></script>
 	<script src="js/views/counter.js"></script>
 	<script src="js/routers/router.js"></script>

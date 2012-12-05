@@ -1,6 +1,6 @@
 var app = app || {};
 
-(function() {
+$(function() {
 	'use strict';
 
 	app.Counter = Backbone.Model.extend({
@@ -11,16 +11,16 @@ var app = app || {};
 
 		increment: function() {
 			this.save({
-				count: count + 1
+				count: this.get('count') + 1
 			});
 		},
 
 		decrement: function() {
 			this.save({
-				count: count - 1
+				count: this.get('count') - 1
 			});
 		}
 
 	});
 
-}());
+});
