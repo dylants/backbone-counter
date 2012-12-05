@@ -5,18 +5,21 @@ $(function( $ ) {
 
 	app.CounterView = Backbone.View.extend({
 
-		el: '#counter',
+		// I believe this is default, but just to be clear...
+		tagName: 'div',
 
 		// Cache the template function for a single item.
 		template: _.template( $('#counter-template').html() ),
 
 		events: {
-			'click #increment': 'incrementCounter',
-			'click #decrement': 'decrementCounter'
+			'click .increment': 'incrementCounter',
+			'click .decrement': 'decrementCounter',
+			'click .remove_counter': 'removeCounter'
 		},
 
 		initialize: function() {
 			this.model.on( 'change', this.render, this );
+			this.model.on( 'destroy', this.remove, this );
 		},
 
 		render: function() {
@@ -31,6 +34,10 @@ $(function( $ ) {
 		decrementCounter: function() {
 			this.model.decrement();
 		},
+
+		removeCounter: function() {
+			this.model.destroy();
+		}
 
 	});
 });

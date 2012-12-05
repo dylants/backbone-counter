@@ -9,14 +9,12 @@ $(function() {
 		},
 
 		index: function() {
-			var counter = new app.Counter();
-			var view = new app.CounterView({ model: counter});
-			view.render();
-			//$('#counter').append(view.render().el);
+			// do nothing
 		}
 	});
 
 	app.CounterRouter = new Workspace();
+	new app.CounterAppView();
 	Backbone.history.start();
 
 });
